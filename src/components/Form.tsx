@@ -1,10 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import FormData from "../types/formTypes";
 import NextButton from "../styled-components/next-button";
+import BackButton from "../styled-components/back-button";
+import Step1 from "./step1";
+import Step2 from "./step2";
+import Step3 from "./step3";
 
 const Form: React.FC = () => {
-  const { register, trigger } = useForm();
+  const { register, trigger, formState: { errors } } = useForm<FormData>();
 
   const [page, setPage] = useState(1);
 
@@ -17,31 +22,30 @@ const Form: React.FC = () => {
 
   const handleBack = () => setPage((prevPage) => prevPage - 1);
 
+  const renderPage = () => {
+    switch (page) {
+      case 1:
+        return <Step1 register={register} errors={errors} />;
+      case 2:
+        return <Step2 register={register} errors={errors} />;
+      default:
+        return <Step3 register={register} errors={errors} />;
+    }
+  };
+
   return (
     <>
-      {page === 1 && (
-        <div>
-          <h1 className="text-4xl flex justify-center mt-12 text-bold">
-            Formulário de cadastro
-          </h1>
-          <div className="flex justify-center">
-            <h1 className="text-xl mt-12 flex justify-center">
-              Informações pessoais
-            </h1>
-          </div>
-          <div className="flex justify-center mt-16">
-            <label>
-              Nome completo:
-              <input type="text" />
-            </label>
-            <label>
-              CPF:
-              <input type="text" />
-            </label>
-          </div>
-          <NextButton/>
+      <div>
+        <h1 className="text-4xl flex justify-center mt-12 text-bold">
+          Formulário de cadastro
+        </h1>
+        {renderPage()}
+
+        <div className="flex justify-between mt-8">
+          {page > 1 && <BackButton onClick={handleBack} />}
+          {page < 3 && <NextButton onClick={handleNext} />}
         </div>
-      )}
+      </div>
     </>
   );
 };

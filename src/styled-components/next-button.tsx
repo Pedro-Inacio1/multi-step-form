@@ -1,9 +1,13 @@
 import styled from "styled-components";
 import { FaArrowRight } from "react-icons/fa";
 
+interface NextButtonProps {
+  onClick: () => void;
+}
+
 const StyledNextButton = styled.button`
   border-radius: 10px;
-  width: 3%;
+  width: 50px;
   border: 1px solid black;
   height: 40px;
 
@@ -15,8 +19,8 @@ const StyledNextButton = styled.button`
   }
 `;
 
-const NextButton = () => {
-  return <StyledNextButton className="flex justify-center items-center"><FaArrowRight/></StyledNextButton>;
+const NextButton:React.FC<NextButtonProps> = ({onClick}) => {
+  return <StyledNextButton onClick={onClick} className="flex justify-center items-center"><FaArrowRight/></StyledNextButton>;
 };
 
 export default NextButton;
