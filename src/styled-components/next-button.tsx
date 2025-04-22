@@ -20,7 +20,7 @@ const StyledNextButton = styled.button`
 `;
 
 const NextButton:React.FC<NextButtonProps> = ({onClick}) => {
-  return <StyledNextButton onClick={onClick} className="flex justify-center items-center"><FaArrowRight/></StyledNextButton>;
+  return <StyledNextButton type="button" onClick={onClick} className="flex justify-center items-center"><FaArrowRight/></StyledNextButton>;
 };
 
 export default NextButton;

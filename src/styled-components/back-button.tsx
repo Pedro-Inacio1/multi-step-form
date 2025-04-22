@@ -22,7 +22,7 @@ const StyledBackButton = styled.button`
     }
 `
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
-    return <StyledBackButton onClick={onClick}><FaArrowLeft /></StyledBackButton>
+    return <StyledBackButton type='button' onClick={onClick}><FaArrowLeft /></StyledBackButton>
 }
 
 export default BackButton

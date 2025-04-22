@@ -9,6 +9,7 @@ export default interface FormData {
     city: string;
     street: string;
     state: string;
+    neighborhood: string;
     complement: string;
     number: number;
     userName: string;

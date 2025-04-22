@@ -18,11 +18,11 @@ const Step3: React.FC<SecondStepProps> = ({ register, errors }) => {
                 </label>
                 <p className="text-red-500 text-sm">{errors.userName?.message}</p>
                 <label>Senha:
-                    <input type="text" {...register('password', { required: 'Informe uma senha.'})} />
+                    <input type="password" {...register('password', { required: 'Informe uma senha.'})} />
                 </label>
                 <p className="text-red-500 text-sm">{errors.password?.message}</p>
                 <label>Confirme a senha:
-                    <input type="text" {...register('confirmPassword', { required: 'Confirme a senha.'})} />
+                    <input type="password" {...register('confirmPassword', { required: 'Confirme a senha.'})} />
                 </label>
                 <p className="text-red-500 text-sm">{errors.confirmPassword?.message}</p>
             </div>

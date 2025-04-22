@@ -22,7 +22,7 @@ const Step1:React.FC<FirstStepProps> = ({ register, errors }) => {
             <p className="text-red-500 text-sm">{errors.completeName?.message}</p>
             <label>
               Data de nascimento:
-              <input type="text" {...register('dateOfBirth', {required: "Informe sua data de nascimento."})}/>
+              <input type="date" {...register('dateOfBirth', {required: "Informe sua data de nascimento."})}/>
             </label>
             <p className="text-red-500 text-sm">{errors.dateOfBirth?.message}</p>
             <label>
