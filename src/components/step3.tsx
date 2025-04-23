@@ -10,7 +10,7 @@ interface StepForm3 {
 }
 
 const Step3: React.FC<StepForm3> = ({ data, register, errors }) => {
-    console.log(data)
+    
     return (
         <div>
             <h1>Resumo dos Dados</h1>
