@@ -13,6 +13,8 @@ const Form: React.FC = () => {
   const {
     register,
     handleSubmit,
+    getValues,
+    setValue,
     trigger,
     formState: { errors },
   } = useForm<FormData>();
@@ -28,14 +30,16 @@ const Form: React.FC = () => {
 
   const handleBack = () => setPage((prevPage) => prevPage - 1);
 
+  const values = getValues();
+
   const renderPage = () => {
     switch (page) {
       case 1:
         return <Step1 register={register} errors={errors} />;
       case 2:
-        return <Step2 register={register} errors={errors} />;
+        return <Step2 register={register} errors={errors} setValue={setValue} />;
       default:
-        return <Step3 register={register} errors={errors} />;
+        return <Step3 data={values} register={register} errors={errors} />;
     }
   };
 

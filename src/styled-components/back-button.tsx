@@ -6,19 +6,20 @@ interface BackButtonProps {
     onClick: () => void;
 }
 
-const StyledBackButton = styled.button`
+const StyledBackButton = styled.button` 
     display: flex;
-    justify-content: center; 
-    border: 1px solid black;
-    border-radius: 7px;
-    width: 50px;
-    cursor: pointer;
+    justify-content: center;
     align-items: center;
+    border-radius: 10px;
+    width: 50px;
+    border: 1px solid black;
+    height: 40px;
 
     &:hover {
         background-color: black;
         color: #fff;
-        transition: 0.5s;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
     }
 `
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {

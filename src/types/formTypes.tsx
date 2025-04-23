@@ -1,6 +1,7 @@
 export default interface FormData {
     completeName: string;
     dateOfBirth: number;
+    email: string;
     gender: string;
     naturality: string;
     civilState: string;
@@ -12,7 +13,6 @@ export default interface FormData {
     neighborhood: string;
     complement: string;
     number: number;
-    userName: string;
     password: string;
     confirmPassword: string;
 }

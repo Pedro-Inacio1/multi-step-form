@@ -25,6 +25,10 @@ const Step1:React.FC<FirstStepProps> = ({ register, errors }) => {
               <input type="date" {...register('dateOfBirth', {required: "Informe sua data de nascimento."})}/>
             </label>
             <p className="text-red-500 text-sm">{errors.dateOfBirth?.message}</p>
+            <label> Email
+              <input type="text" {...register('email', {required: "Campo email é obrigatório."})} />              
+            </label>
+            <p className="text-red-500 text-sm">{errors.email?.message}</p>
             <label>
               Gênero:
               <select {...register('gender', {required: "Informe seu gênero."})}>
