@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { useForm, SubmitHandler, FieldValues } from "react-hook-form";
 import FormData from "../types/formTypes";
@@ -9,7 +8,7 @@ import Step2 from "./step2";
 import Step3 from "./step3";
 import Swal from "sweetalert2";
 
-const Form: React.FC = () => {
+export default function MultiStepForm() {
   const {
     register,
     handleSubmit,
@@ -90,4 +89,4 @@ const Form: React.FC = () => {
   );
 };
 
-export default Form;
+// export default MultiStepForm;

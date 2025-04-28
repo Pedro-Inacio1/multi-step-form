@@ -25,7 +25,7 @@ const Step1:React.FC<FirstStepProps> = ({ register, errors }) => {
               <input type="date" {...register('dateOfBirth', {required: "Informe sua data de nascimento."})}/>
             </label>
             <p className="text-red-500 text-sm">{errors.dateOfBirth?.message}</p>
-            <label> Email
+            <label> Email:
               <input type="text" {...register('email', {required: "Campo email é obrigatório."})} />              
             </label>
             <p className="text-red-500 text-sm">{errors.email?.message}</p>
@@ -46,7 +46,7 @@ const Step1:React.FC<FirstStepProps> = ({ register, errors }) => {
             </label>
             <p className="text-red-500 text-sm">{errors.naturality?.message}</p>
             <label>
-              Estado civil
+              Estado civil:
               <input type="text" {...register('civilState', {required: "Informe seu estado civil."})}/>
             </label>
             <p className="text-red-500 text-sm">{errors.civilState?.message}</p>
